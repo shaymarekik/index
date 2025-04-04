@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>Inscription au Parking</title>     
+    <style>         
+        body {             
+            font-family: 'Arial', sans-serif;             
+            text-align: center;             
+            margin: 0;             
+            padding: 0;             
+            background-color: #f4f4f4;         
+        }         
+        .container {             
+            width: 90%;             
+            max-width: 500px;             
+            margin: auto;             
+            background: white;             
+            padding: 20px;             
+            border-radius: 10px;             
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);             
+            margin-top: 50px;         
+        }         
+        .hidden {             
+            display: none;         
+        }         
+        .form-container {             
+            margin-top: 20px;         
+        }         
+        h1 {             
+            color: #007bff;             
+            font-style: italic;         
+        }         
+        p {             
+            font-size: 16px;             
+            color: #333;             
+            text-align: justify;         
+        }         
+        button {             
+            background-color: #007bff;             
+            color: white;             
+            border: none;             
+            padding: 10px 20px;             
+            font-size: 16px;             
+            border-radius: 5px;             
+            cursor: pointer;             
+            margin: 10px;         
+        }         
+        button:hover {             
+            background-color: #0056b3;         
+        }         
+        input {             
+            width: 100%;             
+            padding: 10px;             
+            margin: 10px 0;             
+            border: 1px solid #ccc;             
+            border-radius: 5px;         
+        }     
+    </style> 
+</head> 
+<body>     
+    <div class="container">         
+        <h1>Informations sur le Parking</h1>         
+        <p>Le smart Parking de la résidence sécurisée utilise un système d'accès par carte RFID pour contrôler les entrées et sorties. Un afficheur LCD indique en temps réel le nombre de places disponibles afin de faciliter le stationnement. Ce système permet d'optimiser l'utilisation des places tout en garantissant un accès réservé aux résidents.</p>                  
+        <button onclick="showForm()">S'inscrire</button>         
+        <button onclick="exitPage()">Quitter</button>                  
+        <div id="registrationForm" class="form-container hidden">             
+            <h2>Inscription au Parking</h2>             
+            <form id="parkingForm">                 
+                <label>Numéro de CIN :</label><br>                 
+                <input type="text" id="cin" required><br><br>                                  
+                <label>Prénom :</label><br>                 
+                <input type="text" id="firstName" required><br><br>                                  
+                <label>Nom :</label><br>                 
+                <input type="text" id="lastName" required><br><br>                                  
+                <label>Numéro de téléphone :</label><br>                 
+                <input type="tel" id="phone" required><br><br>                                  
+                <label>Numéro de chambre :</label><br>                 
+                <input type="number" id="roomNumber" required><br><br>                                  
+                <button type="button" onclick="submitForm()">Soumettre</button>             
+            </form>         
+        </div>     
+    </div>          
+    <script>         
+        function showForm() {             
+            document.getElementById("registrationForm").classList.remove("hidden");         
+        }                  
+        function exitPage() {             
+            window.location.href = "https://www.google.com";          
+        }                  
+        function submitForm() {             
+            alert("Vous avez reçu une réduction de 40% pour les 3 prochains mois !");             
+            document.getElementById("parkingForm").reset();         
+        }     
+    </script> 
+</body> 
+</html>
